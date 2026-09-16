@@ -1,0 +1,275 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dashboard/css/dashboard_projects.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="projects-page">
+
+    <!-- ==========================
+            PAGE HEADER
+    =========================== -->
+
+    <div class="page-header">
+
+        <div>
+
+            <span class="page-tag">
+                PROJECT MANAGEMENT
+            </span>
+
+            <h1>
+                Projects
+            </h1>
+
+            <p>
+                Add, edit, delete and manage all interior design projects.
+            </p>
+
+        </div>
+
+        <a href="{% url 'add_project' %}" class="add-project-btn">
+
+            <i class="bi bi-plus-lg"></i>
+
+            Add Project
+
+        </a>
+
+    </div>
+
+    <!-- ==========================
+            TOOLBAR
+    =========================== -->
+
+    <div class="toolbar">
+
+        <div class="search-box">
+
+            <i class="bi bi-search"></i>
+
+            <input
+                type="text"
+                placeholder="Search projects..."
+            >
+
+        </div>
+
+        <select>
+
+            <option>All Categories</option>
+
+            <option>Residential</option>
+
+            <option>Commercial</option>
+
+            <option>Villa</option>
+
+            <option>Furniture</option>
+
+            <option>Space Planning</option>
+
+        </select>
+
+    </div>
+
+    <!-- ==========================
+            TABLE
+    =========================== -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Image</th>
+
+                    <th>Project</th>
+
+                    <th>Category</th>
+
+                    <th>Location</th>
+
+                    <th>Status</th>
+
+                    <th>Created</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for project in projects %}
+
+                <tr>
+
+                    <td>
+
+                        <img
+                            src="projects/{{ project.cover_image.url }}"
+                            class="project-image"
+                            alt="{{ project.title }}"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <strong>
+
+                            {{ project.title }}
+
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        {{ project.category }}
+
+                    </td>
+
+                    <td>
+
+                        {{ project.location }}
+
+                    </td>
+
+                    <td>
+
+                        {% if project.status %}
+
+                        <span class="status published">
+
+                            Published
+
+                        </span>
+
+                        {% else %}
+
+                        <span class="status draft">
+
+                            Draft
+
+                        </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+
+                        {{ project.created_at|date:"d M Y" }}
+
+                    </td>
+
+                    <td>
+
+                        <td class="action-buttons">
+
+                            <a href="{% url 'edit_project' project.id %}" class="edit-btn">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+
+                            <a href="{% url 'delete_project' project.id %}"
+                                class="delete-btn"
+                                onclick="return confirm('Delete this project?');">
+
+                                <i class="bi bi-trash"></i>
+
+                            </a>
+
+                        </td>
+
+                    </td>
+
+                </tr>
+
+            {% empty %}
+
+                <tr>
+
+                    <td colspan="7">
+
+                        <div class="empty-state">
+
+                            <i class="bi bi-folder2-open"></i>
+
+                            <h3>
+
+                                No Projects Found
+
+                            </h3>
+
+                            <p>
+
+                                Click "Add Project" to create your first project.
+
+                            </p>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ==========================
+            PAGINATION
+    =========================== -->
+
+    <div class="pagination">
+
+        <button>
+
+            <i class="bi bi-chevron-left"></i>
+
+        </button>
+
+        <button class="active">
+
+            1
+
+        </button>
+
+        <button>
+
+            2
+
+        </button>
+
+        <button>
+
+            3
+
+        </button>
+
+        <button>
+
+            <i class="bi bi-chevron-right"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+{% endblock %}

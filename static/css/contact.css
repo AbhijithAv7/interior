@@ -1,0 +1,563 @@
+/* =========================
+   CONSULTATION SECTION
+========================= */
+
+.consultation-section {
+    width: 100%;
+    padding: 120px 4%;
+    background: #f8f5f0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   CONSULTATION CARD
+========================= */
+
+.consultation-container {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(35, 66, 51, 0.08);
+
+    align-items: stretch;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.consultation-image {
+    position: relative;
+
+    width: 100%;
+
+    /* Original image ratio */
+    aspect-ratio: 1214 / 1295;
+
+    overflow: hidden;
+
+    background: #e8dccb;
+}
+
+.consultation-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    transition: transform 0.8s ease;
+}
+
+.consultation-container:hover .consultation-image img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.consultation-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(20, 45, 34, 0.70),
+        rgba(20, 45, 34, 0.02)
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   IMAGE TEXT
+========================= */
+
+.consultation-image-content {
+    position: absolute;
+
+    left: 45px;
+    bottom: 45px;
+
+    z-index: 2;
+
+    color: #ffffff;
+}
+
+.consultation-image-content span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #dcc7a1;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.consultation-image-content h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(32px, 4vw, 52px);
+
+    line-height: 1.1;
+
+    font-weight: 400;
+}
+
+
+/* =========================
+   CONTENT SIDE
+========================= */
+
+.consultation-content {
+    width: 100%;
+
+    padding: 70px 70px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.consultation-label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #b88a44;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.consultation-content h2 {
+    margin: 0 0 20px;
+
+    color: #234233;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 4vw, 62px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+}
+
+.consultation-content h2 span {
+    color: #b88a44;
+}
+
+
+/* =========================
+   INTRO TEXT
+========================= */
+
+.consultation-intro {
+    max-width: 520px;
+
+    margin: 0 0 35px;
+
+    color: #666666;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.consultation-form {
+    width: 100%;
+}
+
+
+/* =========================
+   FORM ROW
+========================= */
+
+.form-row {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #234233;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ddd5ca;
+
+    border-radius: 8px;
+
+    background: #faf8f5;
+
+    color: #234233;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+
+    padding: 15px 16px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   INPUT HEIGHT
+========================= */
+
+.form-group input {
+    height: 52px;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.form-group textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #234233;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(35, 66, 51, 0.08);
+}
+
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999999;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.consultation-btn {
+    width: 100%;
+
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #234233;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================
+   BUTTON ICON
+========================= */
+
+.consultation-btn i {
+    font-size: 16px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.consultation-btn:hover {
+    background: #315745;
+
+    transform: translateY(-2px);
+}
+
+.consultation-btn:hover i {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+
+    .consultation-section {
+        padding: 100px 4%;
+    }
+
+    .consultation-container {
+        max-width: 1100px;
+    }
+
+    .consultation-content {
+        padding: 55px 45px;
+    }
+
+    .consultation-content h2 {
+        font-size: 48px;
+    }
+
+}
+
+
+/* =========================
+   TABLET / SMALL LAPTOP
+========================= */
+
+@media (max-width: 991px) {
+
+    .consultation-section {
+        padding: 90px 4%;
+    }
+
+    .consultation-container {
+        grid-template-columns: 1fr;
+    }
+
+    .consultation-image {
+        aspect-ratio: 1214 / 900;
+    }
+
+    .consultation-image img {
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .consultation-content {
+        padding: 60px 50px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 760px) {
+
+    .consultation-section {
+        padding: 70px 20px;
+    }
+
+    .consultation-container {
+        border-radius: 18px;
+    }
+
+    .consultation-image {
+        aspect-ratio: 1214 / 1000;
+    }
+
+    .consultation-image-content {
+        left: 28px;
+        bottom: 30px;
+    }
+
+    .consultation-image-content h3 {
+        font-size: 36px;
+    }
+
+    .consultation-content {
+        padding: 45px 25px;
+    }
+
+    .consultation-content h2 {
+        font-size: 44px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .consultation-section {
+        padding: 50px 15px;
+    }
+
+    .consultation-container {
+        border-radius: 16px;
+    }
+
+    .consultation-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    .consultation-image-content {
+        left: 22px;
+        bottom: 25px;
+    }
+
+    .consultation-image-content span {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .consultation-image-content h3 {
+        font-size: 31px;
+    }
+
+    .consultation-content {
+        padding: 40px 20px;
+    }
+
+    .consultation-content h2 {
+        font-size: 38px;
+    }
+
+    .consultation-intro {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .form-group input {
+        height: 50px;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+
+    .consultation-btn {
+        min-height: 55px;
+
+        font-size: 13px;
+    }
+
+}

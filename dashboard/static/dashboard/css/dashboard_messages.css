@@ -1,0 +1,346 @@
+.messages-page {
+    padding: 40px;
+    background: #f7f5f1;
+    min-height: calc(100vh - 80px);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.messages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.admin-label {
+    color: #b88a44;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.messages-header h1 {
+    margin: 8px 0 8px;
+
+    color: #234233;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.messages-header p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MESSAGE CONTAINER
+========================= */
+
+.messages-container {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(350px, 1fr)
+    );
+
+    gap: 25px;
+}
+
+
+/* =========================
+   MESSAGE CARD
+========================= */
+
+.message-card {
+    background: #ffffff;
+
+    border: 1px solid #e4dfd7;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow: 0 8px 25px rgba(35, 66, 51, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.message-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(35, 66, 51, 0.10);
+}
+
+
+/* =========================
+   PERSON
+========================= */
+
+.message-top {
+    margin-bottom: 22px;
+}
+
+.message-person {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.message-avatar {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #234233;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.message-person h3 {
+    margin: 0 0 5px;
+
+    color: #234233;
+
+    font-size: 17px;
+}
+
+.message-person span {
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.message-contact {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 18px 0;
+
+    border-top: 1px solid #eee8df;
+    border-bottom: 1px solid #eee8df;
+}
+
+.message-contact a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+.message-contact a:hover {
+    color: #234233;
+}
+
+.message-contact i {
+    color: #b88a44;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-body {
+    padding: 20px 0;
+}
+
+.message-body > span {
+    color: #b88a44;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.message-body p {
+    margin: 10px 0 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    white-space: pre-line;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.message-actions {
+    display: flex;
+
+    gap: 10px;
+}
+
+.message-actions a {
+    flex: 1;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.reply-btn {
+    background: #234233;
+
+    color: #ffffff;
+}
+
+.reply-btn:hover {
+    background: #315745;
+}
+
+.call-btn {
+    background: #f2eee8;
+
+    color: #234233;
+}
+
+.call-btn:hover {
+    background: #e8dccb;
+}
+
+
+/* =========================
+   NO MESSAGES
+========================= */
+
+.no-messages {
+    grid-column: 1 / -1;
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e4dfd7;
+
+    border-radius: 16px;
+}
+
+.no-messages i {
+    font-size: 45px;
+
+    color: #b88a44;
+}
+
+.no-messages h2 {
+    margin: 20px 0 8px;
+
+    color: #234233;
+
+    font-family: "Playfair Display", serif;
+
+    font-weight: 400;
+}
+
+.no-messages p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .messages-page {
+        padding: 30px 20px;
+    }
+
+    .messages-header h1 {
+        font-size: 34px;
+    }
+
+    .messages-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .messages-page {
+        padding: 25px 15px;
+    }
+
+    .messages-header h1 {
+        font-size: 30px;
+    }
+
+    .message-card {
+        padding: 20px;
+    }
+
+}

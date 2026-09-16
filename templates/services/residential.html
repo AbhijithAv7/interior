@@ -1,0 +1,219 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Residential Interior | OAKLARCH</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/service_navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/residential.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    {% include 'service_navbar.html' %}
+
+    <!-- Hero -->
+
+    <section class="service-hero">
+
+        <div class="container hero-container">
+
+            <div class="hero-image">
+
+                <img src="{% static 'images/services1.png' %}" alt="Residential Interior">
+
+            </div>
+
+            <div class="hero-content">
+
+                <span class="service-tag">
+                    RESIDENTIAL INTERIOR
+                </span>
+
+                <h1>
+                    Elegant Homes Designed Around Your Lifestyle
+                </h1>
+
+                <p>
+                    At OAKLARCH, we create sophisticated residential interiors
+                    that blend comfort, functionality, and timeless aesthetics.
+                    From luxurious villas to modern apartments, every space is
+                    carefully planned to reflect your personality while ensuring
+                    maximum comfort and practicality.
+                </p>
+
+                <a href="#overview" class="hero-btn">
+
+                    Explore Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Overview -->
+
+    <section class="overview" id="overview">
+
+        <div class="container">
+
+            <h2>
+                Residential Interior Design
+            </h2>
+
+            <p>
+
+                Your home should be more than just a place to live—it should
+                reflect your lifestyle, personality, and aspirations.
+                Our expert designers combine modern concepts with timeless
+                craftsmanship to create interiors that feel elegant,
+                functional, and welcoming.
+
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <i class="bi bi-house-door"></i>
+
+                    <h3>Living Room</h3>
+
+                    <p>
+                        Comfortable and luxurious spaces for everyday living.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <i class="bi bi-lamp"></i>
+
+                    <h3>Bedroom</h3>
+
+                    <p>
+                        Peaceful interiors designed for relaxation and comfort.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <i class="bi bi-cup-hot"></i>
+
+                    <h3>Kitchen</h3>
+
+                    <p>
+                        Functional modular kitchens with premium finishes.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <i class="bi bi-stars"></i>
+
+                    <h3>Luxury Finish</h3>
+
+                    <p>
+                        Premium materials and carefully selected décor.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Why Choose -->
+
+    <section class="why-service">
+
+        <div class="container">
+
+            <h2>
+                Why Choose OAKLARCH?
+            </h2>
+
+            <div class="why-grid">
+
+                <div>
+                    ✔ Personalized Interior Concepts
+                </div>
+
+                <div>
+                    ✔ Premium Quality Materials
+                </div>
+
+                <div>
+                    ✔ Smart Space Planning
+                </div>
+
+                <div>
+                    ✔ Modern & Timeless Designs
+                </div>
+
+                <div>
+                    ✔ Transparent Project Management
+                </div>
+
+                <div>
+                    ✔ On-Time Delivery
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="service-cta">
+
+        <div class="container">
+
+            <h2>
+                Ready to Design Your Dream Home?
+            </h2>
+
+            <p>
+
+                Let's transform your vision into a beautiful living space
+                tailored to your lifestyle.
+
+            </p>
+
+            <a href="/#contact" class="cta-btn">
+
+                Get Free Consultation
+
+            </a>
+
+        </div>
+
+    </section>
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

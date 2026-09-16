@@ -1,0 +1,155 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block title %}
+Blog Management
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dashboard/css/dashboard_blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="blog-page">
+
+    <div class="page-header">
+
+        <div>
+            <span class="page-tag">OAKLARCH ADMIN</span>
+
+            <h1>Blog Management</h1>
+
+            <p>
+                Manage your interior design articles and journal posts.
+            </p>
+        </div>
+
+        <a href="{% url 'add_blog' %}" class="add-blog-btn">
+            <i class="bi bi-plus-lg"></i>
+            Add Blog
+        </a>
+
+    </div>
+
+
+    <div class="blog-container">
+
+        {% for blog in blogs %}
+
+        <div class="blog-card">
+
+            <div class="blog-image">
+
+                {% if blog.image %}
+
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+
+                {% else %}
+
+                    <div class="no-image">
+                        <i class="bi bi-image"></i>
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="blog-content">
+
+                <span class="blog-category">
+                    {{ blog.category }}
+                </span>
+
+                <h2>
+                    {{ blog.title }}
+                </h2>
+
+                <p class="blog-description">
+                    {{ blog.content|truncatewords:25 }}
+                </p>
+
+
+                <div class="blog-footer">
+
+                    <span class="blog-date">
+
+                        <i class="bi bi-calendar3"></i>
+
+                        {% if blog.created_at %}
+                            {{ blog.created_at|date:"d M Y" }}
+                        {% endif %}
+
+                    </span>
+
+
+                    <div class="blog-actions">
+
+                        <!-- EDIT -->
+
+                        <a href="{% url 'edit_blog' blog.id %}"
+                           class="edit-btn"
+                           title="Edit">
+
+                            <i class="bi bi-pencil"></i>
+
+                        </a>
+
+
+                        <!-- DELETE -->
+
+                        <form method="POST"
+                              action="{% url 'delete_blog' blog.id %}"
+                              class="delete-form"
+                              onsubmit="return confirm('Are you sure you want to delete this blog?');">
+
+                            {% csrf_token %}
+
+                            <button type="submit"
+                                    class="delete-btn"
+                                    title="Delete">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="empty-blog">
+
+            <i class="bi bi-journal-x"></i>
+
+            <h2>No Blogs Yet</h2>
+
+            <p>
+                You haven't created any blog posts yet.
+            </p>
+
+            <a href="{% url 'add_blog' %}" class="add-blog-btn">
+
+                <i class="bi bi-plus-lg"></i>
+
+                Create Your First Blog
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

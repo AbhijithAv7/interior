@@ -1,0 +1,176 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block title %}
+Edit Blog
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'dashboard/css/add_blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="blog-add-page">
+
+    <div class="blog-header">
+
+        <div class="header-text">
+
+            <span class="admin-label">
+                OAKLARCH ADMIN
+            </span>
+
+            <h1>Edit Blog</h1>
+
+            <p>
+                Update your OAKLARCH journal post.
+            </p>
+
+        </div>
+
+        <a href="{% url 'dashboard_blog' %}" class="back-btn">
+            <i class="bi bi-arrow-left"></i>
+            Back to Blogs
+        </a>
+
+    </div>
+
+
+    <div class="blog-form-container">
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+
+            <div class="form-group">
+
+                <label for="{{ form.title.id_for_label }}">
+                    Blog Title
+                </label>
+
+                {{ form.title }}
+
+                {% if form.title.errors %}
+                    <div class="form-error">
+                        {{ form.title.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="{{ form.category.id_for_label }}">
+                    Category
+                </label>
+
+                {{ form.category }}
+
+                {% if form.category.errors %}
+                    <div class="form-error">
+                        {{ form.category.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="{{ form.featured_image.id_for_label }}">
+                    Featured Image
+                </label>
+
+                {{ form.featured_image }}
+
+                <small>
+                    Upload a new image only if you want to replace the current image.
+                </small>
+
+                {% if form.featured_image.errors %}
+                    <div class="form-error">
+                        {{ form.featured_image.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="{{ form.excerpt.id_for_label }}">
+                    Short Description
+                </label>
+
+                {{ form.excerpt }}
+
+                {% if form.excerpt.errors %}
+                    <div class="form-error">
+                        {{ form.excerpt.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="{{ form.content.id_for_label }}">
+                    Blog Content
+                </label>
+
+                {{ form.content }}
+
+                {% if form.content.errors %}
+                    <div class="form-error">
+                        {{ form.content.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+
+            {% if form.is_published %}
+
+            <div class="publish-group">
+
+                {{ form.is_published }}
+
+                <label for="{{ form.is_published.id_for_label }}">
+                    Publish this blog
+                </label>
+
+            </div>
+
+            {% endif %}
+
+
+            <div class="form-actions">
+
+                <a
+                    href="{% url 'dashboard_blog' %}"
+                    class="cancel-btn"
+                >
+                    Cancel
+                </a>
+
+                <button
+                    type="submit"
+                    class="publish-btn"
+                >
+                    <i class="bi bi-check-lg"></i>
+                    Update Blog
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

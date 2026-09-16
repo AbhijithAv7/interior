@@ -1,0 +1,17 @@
+from django.shortcuts import render,get_object_or_404
+from projects.models import *
+
+
+def project_list(request):
+    projects = Project.objects.all().order_by("-created_at")
+    return render(request, "projects.html", {
+        "projects": projects
+    })
+
+
+def project_detail(request, id):
+    project = get_object_or_404(Project, id=id)
+
+    return render(request, "project_detail.html", {
+        "project": project
+    })

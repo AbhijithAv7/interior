@@ -1,0 +1,83 @@
+{% load static %}
+
+<section id="blog" class="blog-section">
+
+    <div class="container">
+
+        <div class="blog-header">
+
+            <p class="subtitle">OAKLARCH JOURNAL</p>
+
+            <h2>
+                Design Ideas & Inspiration
+            </h2>
+
+            <p>
+                Explore our latest interior design ideas,
+                trends, tips and inspirations.
+            </p>
+
+        </div>
+
+
+        <div class="blog-grid" id="blogGrid">
+
+            {% for post in posts %}
+
+            <article class="blog-card">
+
+                <a href="{% url 'blog_detail' post.slug %}">
+
+                    <div class="blog-image">
+
+                        <img
+                            src="{{ post.featured_image.url }}"
+                            alt="{{ post.title }}"
+                        >
+
+                    </div>
+
+                </a>
+
+
+                <div class="blog-content">
+
+                    <span>
+                        {{ post.category }}
+                    </span>
+
+                    <h3>
+                        {{ post.title }}
+                    </h3>
+
+                    <p>
+                        {{ post.excerpt }}
+                    </p>
+
+                    <a href="{% url 'blog_detail' post.slug %}">
+                        Read More →
+                    </a>
+
+                </div>
+
+            </article>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% if has_more_posts %}
+
+        <div class="blog-more">
+            <button id="loadMoreBlogs" type="button">
+                Load More
+            </button>
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</section>

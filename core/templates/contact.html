@@ -1,0 +1,121 @@
+{% load static %}
+
+<section id="contact" class="consultation-section">
+
+    <div class="consultation-container">
+
+        <div class="consultation-image">
+
+            <img
+                src="{% static 'images/consultation.png' %}"
+                alt="OAKLARCH Interior Design"
+            >
+
+            {% comment %} <div class="consultation-image-content">
+                <span>OAKLARCH</span>
+                <h3>Spaces Designed<br>Around You.</h3>
+            </div> {% endcomment %}
+
+        </div>
+
+
+        <div class="consultation-content">
+
+            <span class="consultation-label">
+                OAKLARCH STUDIO
+            </span>
+
+            <h2>
+                Get a Free<br>
+                <span>Consultation</span>
+            </h2>
+
+            <p class="consultation-intro">
+                Tell us about your space and your design requirements.
+                Our team will get in touch with you soon.
+            </p>
+
+
+            <form
+                method="POST"
+                action="{% url 'consultation' %}"
+                class="consultation-form"
+            >
+
+                {% csrf_token %}
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">Tell us about your project</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Tell us about your space, requirements and ideas..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="consultation-btn">
+
+                    Send Consultation Request
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>

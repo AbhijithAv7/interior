@@ -1,0 +1,54 @@
+{% load static %}
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <span class="section-tag">OUR PROJECTS</span>
+
+        <h2>Our Latest Interior Projects</h2>
+
+        <p class="project-text">
+            Discover beautifully designed spaces that combine creativity,
+            functionality, and timeless elegance.
+        </p>
+
+        <div class="project-grid">
+
+            {% for project in projects %}
+
+            <a href="{% url 'project_detail' project.id %}" class="project-card">
+
+                <div class="project-image">
+
+                    <img src="{{ project.cover_image.url }}" alt="{{ project.title }}">
+
+                    <div class="project-overlay">
+                        <span>View Project</span>
+                    </div>
+
+                </div>
+
+                <div class="project-content">
+
+                    <span class="category">{{ project.category }}</span>
+
+                    <h3>{{ project.title }}</h3>
+
+                    <p>{{ project.location }}</p>
+
+                </div>
+
+            </a>
+
+            {% empty %}
+
+            <p>No projects available.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>

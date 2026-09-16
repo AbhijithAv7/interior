@@ -1,0 +1,35 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+
+{% block title %}Add Gallery Image{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static "dashboard/css/add_gallery.css" %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h2>Add Gallery Image</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="save-btn">
+
+            Upload Image
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

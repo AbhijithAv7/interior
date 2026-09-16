@@ -1,0 +1,164 @@
+{% extends "dashboard/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Messages
+{% endblock %}
+
+{% block css %}
+
+<link
+    rel="stylesheet"
+    href="{% static 'dashboard/css/dashboard_messages.css' %}"
+>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="messages-page">
+
+    <div class="messages-header">
+
+        <div>
+
+            <span class="admin-label">
+                OAKLARCH ADMIN
+            </span>
+
+            <h1>
+                Consultation Messages
+            </h1>
+
+            <p>
+                View consultation requests submitted by your clients.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="messages-container">
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+            <div class="message-card">
+
+                <div class="message-top">
+
+                    <div class="message-person">
+
+                        <div class="message-avatar">
+                            {{ message.name|first|upper }}
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                {{ message.name }}
+                            </h3>
+
+                            <span>
+                                {{ message.created_at|date:"F d, Y" }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="message-contact">
+
+                    <a href="tel:{{ message.phone }}">
+
+                        <i class="bi bi-telephone"></i>
+
+                        {{ message.phone }}
+
+                    </a>
+
+
+                    <a href="mailto:{{ message.email }}">
+
+                        <i class="bi bi-envelope"></i>
+
+                        {{ message.email }}
+
+                    </a>
+
+                </div>
+
+
+                <div class="message-body">
+
+                    <span>
+                        MESSAGE
+                    </span>
+
+                    <p>
+                        {{ message.message }}
+                    </p>
+
+                </div>
+
+
+                <div class="message-actions">
+
+                    <a
+                        href="mailto:{{ message.email }}"
+                        class="reply-btn"
+                    >
+
+                        <i class="bi bi-reply"></i>
+
+                        Reply
+
+                    </a>
+
+                    <a
+                        href="tel:{{ message.phone }}"
+                        class="call-btn"
+                    >
+
+                        <i class="bi bi-telephone"></i>
+
+                        Call
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="no-messages">
+
+                <i class="bi bi-chat-square-text"></i>
+
+                <h2>
+                    No Messages Yet
+                </h2>
+
+                <p>
+                    Consultation requests will appear here.
+                </p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

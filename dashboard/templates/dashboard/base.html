@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% block title %} OAKLARCH Dashboard {% endblock %}</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="{% static 'dashboard/css/sidebar.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}" />
+
+    
+
+
+    {% block css %} {% endblock %}
+  </head>
+
+  <body>
+    <div class="dashboard-wrapper">
+      {% include 'dashboard/sidebar.html' %}
+
+      <main class="dashboard-main">
+        <header class="topbar">
+          <button class="menu-toggle">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <div class="topbar-right">
+            <i class="bi bi-bell"></i>
+
+            <div class="admin-profile">
+              <div class="avatar">A</div>
+
+              <div>
+                <h4>Admin</h4>
+
+                <span>OAKLARCH</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {% block content %} {% endblock %}
+      </main>
+    </div>
+
+  <script src="{% static 'dashboard/js/dashboard.js' %}"></script>
+
+    {% block js %} {% endblock %}
+  </body>
+</html>
