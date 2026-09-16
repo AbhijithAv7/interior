@@ -1,0 +1,156 @@
+/*=========================================
+            EDIT PROJECT
+=========================================*/
+
+.form-container{
+
+    max-width:850px;
+
+    margin:40px auto;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:16px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.form-container h2{
+
+    color:#234233;
+
+    margin-bottom:30px;
+
+    font-size:32px;
+
+}
+
+.form-container form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.form-container label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#234233;
+
+    font-weight:600;
+
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+.form-container textarea{
+
+    min-height:150px;
+
+    resize:vertical;
+
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus{
+
+    border-color:#234233;
+
+}
+
+.save-btn{
+
+    background:#234233;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.save-btn:hover{
+
+    background:#2f5a46;
+
+}
+/*=========================================
+            BACK BUTTON
+=========================================*/
+
+.back-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    margin-bottom:25px;
+
+    background:#234233;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#2f5a46;
+
+    transform:translateX(-5px);
+
+}
+
+.back-btn i{
+
+    font-size:18px;
+
+}

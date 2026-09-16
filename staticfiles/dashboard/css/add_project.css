@@ -1,0 +1,399 @@
+/*=========================================
+            ADD PROJECT
+=========================================*/
+
+.add-project-page{
+
+    padding:35px;
+
+}
+
+/*=========================================
+            PAGE HEADER
+=========================================*/
+
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    gap:20px;
+
+}
+
+.page-tag{
+
+    display:block;
+
+    color:#B88A44;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+.page-header h1{
+
+    color:#234233;
+
+    font-size:36px;
+
+    margin-bottom:10px;
+
+}
+
+.page-header p{
+
+    color:#777;
+
+    font-size:16px;
+
+}
+
+.back-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 24px;
+
+    border-radius:12px;
+
+    background:#234233;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.back-btn:hover{
+
+    background:#B88A44;
+
+    transform:translateY(-3px);
+
+}
+
+/*=========================================
+            FORM
+=========================================*/
+
+.project-form{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:40px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:40px;
+
+}
+
+/*=========================================
+            FORM GROUP
+=========================================*/
+
+.form-group{
+
+    margin-bottom:28px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#234233;
+
+    font-weight:600;
+
+    font-size:15px;
+
+}
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    background:#fafafa;
+
+}
+
+.form-group textarea{
+
+    min-height:180px;
+
+    resize:vertical;
+
+}
+
+.form-group input:focus,
+
+.form-group select:focus,
+
+.form-group textarea:focus{
+
+    border-color:#234233;
+
+    background:#fff;
+
+    box-shadow:0 0 0 4px rgba(35,66,51,.08);
+
+}
+
+/*=========================================
+            IMAGE UPLOAD
+=========================================*/
+
+.upload-box{
+
+    background:#fafafa;
+
+    border:2px dashed #d8d8d8;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.upload-box label{
+
+    display:block;
+
+    color:#234233;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.upload-box input[type=file]{
+
+    width:100%;
+
+    padding:12px;
+
+    cursor:pointer;
+
+}
+
+#coverPreview{
+
+    display:none;
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    margin-top:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+}
+
+/*=========================================
+            STATUS
+=========================================*/
+
+.right-column .form-group{
+
+    margin-top:30px;
+
+}
+
+/*=========================================
+            SAVE BUTTON
+=========================================*/
+
+.save-btn{
+
+    width:100%;
+
+    margin-top:30px;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px;
+
+    border-radius:14px;
+
+    background:#234233;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:.35s;
+
+}
+
+.save-btn:hover{
+
+    background:#B88A44;
+
+    transform:translateY(-3px);
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:1100px){
+
+.form-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.add-project-page{
+
+    padding:20px;
+
+}
+
+.page-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.page-header h1{
+
+    font-size:30px;
+
+}
+
+.back-btn{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.project-form{
+
+    padding:25px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.add-project-page{
+
+    padding:15px;
+
+}
+
+.page-header h1{
+
+    font-size:26px;
+
+}
+
+.project-form{
+
+    padding:20px;
+
+}
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea{
+
+    padding:14px;
+
+}
+
+#coverPreview{
+
+    height:200px;
+
+}
+
+.save-btn{
+
+    padding:16px;
+
+}
+
+}

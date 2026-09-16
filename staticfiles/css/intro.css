@@ -1,0 +1,476 @@
+/*=========================================
+            INTRO SECTION
+=========================================*/
+
+.intro{
+    position:relative;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    background:#234233;
+
+    overflow:hidden;
+}
+
+/* Decorative Shapes */
+
+.intro::before{
+    content:"";
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:#315745;
+
+    top:-250px;
+    right:-180px;
+
+    animation:floatOne 8s ease-in-out infinite;
+}
+
+.intro::after{
+    content:"";
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:#1B3429;
+
+    bottom:-180px;
+    left:-120px;
+
+    animation:floatTwo 10s ease-in-out infinite;
+}
+
+
+/*=========================================
+            CONTENT
+=========================================*/
+
+.intro-content{
+
+    position:relative;
+    z-index:10;
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+}
+
+/*=========================================
+            RIGHT IMAGE
+=========================================*/
+
+.intro-image{
+
+    position:absolute;
+
+    right:5%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:42%;
+    max-width:620px;
+
+    height:475px;          
+
+    z-index:5;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    animation:imageFade 1.4s ease forwards;
+
+    opacity:0;
+}
+
+
+.intro-image img{
+
+    width:100%;
+    height: 100%;
+
+    display:block;
+
+    border-radius:30px;
+
+    object-fit:cover;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.30);
+
+    transition:.5s;
+}
+
+.intro-image img:hover{
+
+    transform:scale(1.03);
+}
+
+.intro-subtitle{
+
+    color:#DCC7A1;
+
+    font-size:15px;
+
+    letter-spacing:7px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+
+    display:inline-block;
+
+    opacity:0;
+
+    transform:translateY(-40px);
+
+    animation:slideDown 1s ease forwards;
+}
+
+.intro-content h1{
+
+    color:#F8F5F0;
+
+    font-size:76px;
+
+    line-height:1.05;
+
+    font-weight:600;
+
+    max-width:750px;
+
+    margin-bottom:30px;
+
+    opacity:0;
+
+    transform:translateX(-120px);
+
+    animation:slideLeft 1.2s ease forwards;
+
+    animation-delay:.3s;
+}
+
+.intro-content p{
+
+    color:#D8DDD7;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    max-width:620px;
+
+    margin-bottom:45px;
+
+    opacity:0;
+
+    transform:translateX(120px);
+
+    animation:slideRight 1.2s ease forwards;
+
+    animation-delay:.7s;
+}
+
+/*=========================================
+            BUTTON
+=========================================*/
+
+.intro-btn{
+
+    display:inline-block;
+
+    padding:18px 42px;
+
+    background:#F8F5F0;
+
+    color:#234233;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    transition:.4s;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:slideUp 1s ease forwards;
+
+    animation-delay:1.1s;
+}
+
+.intro-btn:hover{
+
+    background:#DCC7A1;
+
+    color:#1B3429;
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+
+/*=========================================
+            SIDE LINE
+=========================================*/
+
+.intro-line{
+
+    position:absolute;
+
+    right:90px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:2px;
+
+    height:180px;
+
+    background:rgba(255,255,255,.25);
+
+    transform-origin:top;
+
+    animation:growLine 2s ease forwards;
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.intro{
+
+    text-align:center;
+
+    justify-content:center;
+}
+
+.intro-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+.intro-image{
+
+    display:none;
+}
+
+}
+
+@media(max-width:768px){
+
+.intro{
+
+    text-align:center;
+}
+
+.intro-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+
+
+.intro-content h1{
+
+    font-size:42px;
+}
+
+.intro-content p{
+
+    font-size:17px;
+}
+
+.intro::before{
+
+    width:500px;
+    height:500px;
+}
+
+.intro::after{
+
+    width:300px;
+    height:300px;
+}
+
+.intro-line{
+
+    display:none;
+}
+
+}
+
+@media(max-width:480px){
+
+.intro-content h1{
+
+    font-size:34px;
+}
+
+.intro-content p{
+
+    width:100%;
+}
+
+}
+/*=========================================
+            ANIMATIONS
+=========================================*/
+
+@keyframes slideDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-50px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes slideLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-120px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes slideRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(120px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes floatOne{
+
+    0%,100%{
+
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    50%{
+
+        transform:translateY(-35px) rotate(6deg);
+    }
+
+}
+
+@keyframes floatTwo{
+
+    0%,100%{
+
+        transform:translateY(0px);
+    }
+
+    50%{
+
+        transform:translateY(30px);
+    }
+
+}
+
+@keyframes growLine{
+
+    from{
+
+        transform:translateY(-50%) scaleY(0);
+    }
+
+    to{
+
+        transform:translateY(-50%) scaleY(1);
+    }
+
+}
+@keyframes imageFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translate(80px,-50%);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translate(0,-50%);
+    }
+
+}

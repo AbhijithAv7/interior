@@ -1,0 +1,109 @@
+/*=========================================
+        SERVICE NAVBAR
+=========================================*/
+
+.service-navbar{
+
+    position:sticky;
+
+    top:0;
+
+    width:100%;
+
+    height:75px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #ececec;
+
+    z-index:1000;
+
+}
+
+.service-navbar .container{
+
+    max-width:1200px;
+
+    width:92%;
+
+    height:100%;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.back-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#234233;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-btn i{
+
+    font-size:24px;
+
+}
+
+.back-btn:hover{
+
+    color:#B88A44;
+
+    transform:translateX(-4px);
+
+}
+
+.service-logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#234233;
+
+}
+
+@media(max-width:768px){
+
+.service-navbar{
+
+    height:65px;
+
+}
+
+.service-logo{
+
+    font-size:20px;
+
+}
+
+.back-btn span{
+
+    display:none;
+
+}
+
+.back-btn i{
+
+    font-size:26px;
+
+}
+
+}

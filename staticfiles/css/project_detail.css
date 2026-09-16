@@ -1,0 +1,577 @@
+/*=========================================
+        PROJECT DETAIL
+=========================================*/
+
+.project-detail{
+
+    padding:140px 0 80px;
+
+    background:#F8F5F0;
+
+}
+
+.project-detail .container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/*======================
+BACK BUTTON
+======================*/
+
+.back-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    background:#234233;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+    margin-bottom:40px;
+
+}
+
+.back-btn:hover{
+
+    background:#2F5A46;
+
+}
+
+/*=========================================
+            DETAIL NAVBAR
+=========================================*/
+
+.detail-navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:80px;
+
+    background:#ffffff;
+
+    border-bottom:1px solid #e6e6e6;
+
+    z-index:999;
+
+}
+
+.detail-navbar .container{
+
+    width:90%;
+
+    max-width:1400px;
+
+    height:100%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.back-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    color:#234233;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-link:hover{
+
+    transform:translateX(-5px);
+
+}
+
+.back-link i{
+
+    font-size:22px;
+
+}
+
+.logo{
+
+    text-decoration:none;
+
+    color:#234233;
+
+    font-size:28px;
+
+    font-family:"Playfair Display", serif;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+/* Push content below fixed navbar */
+
+.project-detail{
+
+    padding-top:140px;
+
+}
+
+/*======================
+HEADER
+======================*/
+
+.category{
+
+    color:#B88A44;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    font-weight:600;
+
+}
+
+.project-header h1{
+
+    font-size:52px;
+
+    color:#234233;
+
+    margin:15px 0;
+
+}
+
+.location{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+/*======================
+IMAGE
+======================*/
+
+.project-image{
+
+    margin:50px 0;
+
+}
+
+.project-image img{
+
+    width:100%;
+
+    height:650px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+}
+
+/*=========================================
+            GALLERY
+=========================================*/
+
+.gallery{
+
+    margin-top:80px;
+
+}
+
+.gallery h2{
+
+    font-size:34px;
+
+    color:#234233;
+
+    margin-bottom:30px;
+
+}
+
+.gallery-slider{
+
+    display:flex;
+
+    gap:20px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+    padding-bottom:15px;
+
+}
+
+.gallery-slider::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.gallery-slider::-webkit-scrollbar-thumb{
+
+    background:#234233;
+
+    border-radius:30px;
+
+}
+
+.gallery-slider::-webkit-scrollbar-track{
+
+    background:#ddd;
+
+}
+
+.gallery-item{
+
+    flex-shrink:0;
+
+}
+
+.gallery-item img{
+
+    width:360px;
+
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+}
+
+.gallery-item img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+/*=========================================
+            LIGHTBOX
+=========================================*/
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.lightbox.active{
+
+    display:flex;
+
+}
+
+.lightbox-image{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:10px;
+
+}
+
+.close-lightbox{
+
+    position:absolute;
+
+    top:30px;
+
+    right:40px;
+
+    color:#fff;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.gallery-slider img{
+
+    width:300px;
+
+    height:220px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.gallery{
+
+    margin-top:60px;
+
+}
+
+.gallery h2{
+
+    font-size:28px;
+
+}
+
+.gallery-slider{
+
+    gap:15px;
+
+}
+
+.gallery-item img{
+
+    width:260px;
+
+    height:180px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.gallery h2{
+
+    font-size:24px;
+
+}
+
+.gallery-slider img{
+
+    width:220px;
+
+    height:160px;
+
+}
+
+}
+
+/*======================
+INFO BOXES
+======================*/
+
+.project-info{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-bottom:60px;
+
+}
+
+.info-box{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+}
+
+.info-box h4{
+
+    color:#234233;
+
+    margin-bottom:12px;
+
+}
+
+.info-box p{
+
+    color:#666;
+
+}
+
+/*======================
+DESCRIPTION
+======================*/
+
+.project-description{
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:16px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+}
+
+.project-description h2{
+
+    color:#234233;
+
+    margin-bottom:20px;
+
+}
+
+.project-description p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+}
+
+/*======================
+RESPONSIVE
+======================*/
+
+@media(max-width:992px){
+
+.project-header h1{
+
+    font-size:42px;
+
+}
+
+.project-image img{
+
+    height:500px;
+
+}
+
+.project-info{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.project-detail{
+
+    padding:110px 0 60px;
+
+}
+
+.project-header h1{
+
+    font-size:34px;
+
+}
+
+.project-image img{
+
+    height:320px;
+
+}
+
+.project-description{
+
+    padding:25px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.project-header h1{
+
+    font-size:28px;
+
+}
+
+.location{
+
+    font-size:16px;
+
+}
+
+.project-description p{
+
+    font-size:15px;
+
+}
+
+.back-btn{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}

@@ -1,0 +1,346 @@
+/* =========================
+   ADD BLOG PAGE
+========================= */
+
+.blog-add-page{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.blog-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    margin-bottom:35px;
+}
+
+.admin-label{
+    display:block;
+    color:#B88A44;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:8px;
+}
+
+.header-text h1{
+    margin:0;
+    color:#234233;
+    font-size:38px;
+    font-weight:700;
+}
+
+.header-text p{
+    margin:8px 0 0;
+    color:#777;
+    font-size:15px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:12px 20px;
+
+    background:#234233;
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:9px;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#2f5a46;
+    transform:translateX(-4px);
+}
+
+
+/* =========================
+   FORM CONTAINER
+========================= */
+
+.blog-form-container{
+    width:100%;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.07);
+
+    box-sizing:border-box;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.blog-form-container form{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    margin-bottom:9px;
+
+    color:#234233;
+
+    font-size:15px;
+    font-weight:600;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+
+    padding:14px 16px;
+
+    box-sizing:border-box;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    color:#333;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#234233;
+
+    box-shadow:0 0 0 4px rgba(35,66,51,.08);
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.form-group textarea{
+    min-height:180px;
+
+    resize:vertical;
+
+    line-height:1.6;
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.form-group input[type="file"]{
+    padding:10px;
+
+    cursor:pointer;
+}
+
+.form-group small{
+    margin-top:7px;
+
+    color:#888;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   PUBLISH CHECKBOX
+========================= */
+
+.publish-group{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    padding:5px 0;
+}
+
+.publish-group input{
+    width:17px;
+    height:17px;
+
+    accent-color:#234233;
+
+    cursor:pointer;
+}
+
+.publish-group label{
+    color:#444;
+
+    font-size:14px;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.form-actions{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+
+    gap:12px;
+
+    padding-top:10px;
+
+    border-top:1px solid #eee;
+}
+
+.cancel-btn{
+    padding:13px 24px;
+
+    color:#234233;
+
+    text-decoration:none;
+
+    border:1px solid #234233;
+
+    border-radius:9px;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.cancel-btn:hover{
+    background:#234233;
+    color:#fff;
+}
+
+
+.publish-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:13px 25px;
+
+    background:#234233;
+    color:#fff;
+
+    border:none;
+
+    border-radius:9px;
+
+    font-family:inherit;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.publish-btn:hover{
+    background:#2f5a46;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   DJANGO ERRORS
+========================= */
+
+.errorlist{
+    list-style:none;
+
+    margin:6px 0 0;
+    padding:0;
+
+    color:#dc3545;
+
+    font-size:13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .blog-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .header-text h1{
+        font-size:30px;
+    }
+
+    .back-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .blog-form-container{
+        padding:25px;
+    }
+
+    .form-actions{
+        flex-direction:column-reverse;
+        align-items:stretch;
+    }
+
+    .cancel-btn,
+    .publish-btn{
+        width:100%;
+        text-align:center;
+        box-sizing:border-box;
+    }
+
+}
